@@ -18,6 +18,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { RowspinnerComponent } from './rowspinner/rowspinner.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { FormInfoComponent } from './dashboard/form-info/form-info.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { FormInfoComponent } from './dashboard/form-info/form-info.component';
     MatIconModule,
     MatProgressSpinnerModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

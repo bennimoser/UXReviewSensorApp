@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
 import { FormInfoComponent } from '../form-info/form-info.component';
@@ -12,7 +13,7 @@ import { FormInfoComponent } from '../form-info/form-info.component';
 })
 export class AddSensorsDataComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,public storeService: StoreService, private formBuilder: UntypedFormBuilder, public backendService: BackendService, public dialogRef: MatDialogRef<AddSensorsDataComponent>) { }
+  constructor(public dialog: MatDialog,public storeService: StoreService, private formBuilder: UntypedFormBuilder, public backendService: BackendService, public dialogRef: MatDialogRef<AddSensorsDataComponent>,private _snackbar:MatSnackBar) { }
   public sensorenDataForm: any;
   public showAddTask: boolean = false;
   public isAdding: boolean = false;
@@ -35,9 +36,15 @@ export class AddSensorsDataComponent implements OnInit {
   async onSubmit() {
     if(this.sensorenDataForm?.valid) {
       this.isAdding = true;
+      try{
       await this.backendService.addSensorsData(this.sensorenDataForm.value, this.currentPage);
       this.sensorenDataForm.reset();
-      this.isAdding = false
+      this.isAdding = false;
+      this._snackbar.open("Erstellen war erfolgreich","Schließen");
+      }
+      catch(e){
+        this._snackbar.open("Es ist ein Fehler beim Erstellen aufgetreten!","Schließen");
+      }
       this.dialogRef.close();
     }
 
