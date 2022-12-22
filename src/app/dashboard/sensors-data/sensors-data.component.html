@@ -21,7 +21,15 @@
 <button [ngClass]="(i + 1) == currentPage ? 'active' : 'inactive'" type="button" class="btn btn-outline-warning pageButton" (click)="selectPage(i)" *ngFor="let page of [].constructor(pages); let i = index">{{i + 1}}</button>
 -->
 
-<div class="container">
+<div class="container" style="background-color: #fcfcfc">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-xl-7 col-sm-8">
+      <h2 class="float-left">Sensoren-Daten</h2>
+    </div>
+    <div class="col-xl-2 col-sm-2">
+      <app-button class="float-right"></app-button>
+    </div>
+  </div>
   <div class="row justify-content-center align-items-center">
     <div class="col-xl-1 col-sm-2">
       <label>Sensor</label>
