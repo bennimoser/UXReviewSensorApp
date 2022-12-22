@@ -125,6 +125,13 @@
       "humidity": 23,
       "date": "2022-08-06",
       "id": 31
+    },
+    {
+      "sensorId": 1,
+      "temperature": 13,
+      "humidity": 86,
+      "date": "2022-12-24",
+      "id": 32
     }
   ],
   "sensors": [

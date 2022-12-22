@@ -3,7 +3,8 @@ import { SensorPosition } from 'src/app/Sensor';
 import { BackendService } from 'src/app/shared/backend.service';
 import { SENSORS_PER_PAGE } from 'src/app/shared/constants';
 import { StoreService } from 'src/app/shared/store.service';
-
+import {MatDialog} from '@angular/material/dialog';
+import { AddSensorsDataComponent } from '../add-sensors-data/add-sensors-data.component';
 @Component({
   selector: 'app-sensors-data',
   templateUrl: './sensors-data.component.html',
@@ -15,7 +16,7 @@ export class SensorsDataComponent implements OnInit {
 
   public get SensorPosition() {return SensorPosition; }
 
-  constructor(private backendService: BackendService, public storeService: StoreService) { }
+  constructor(private backendService: BackendService, public storeService: StoreService,public dialog: MatDialog) { }
 
   public pages: number = 0;
   public currentPage: number = 1;
@@ -43,5 +44,13 @@ export class SensorsDataComponent implements OnInit {
     this.currentPage = i + 1;
     await this.backendService.getSensorenDaten(this.currentPage);
     this.storeService.isLoading = false;
+  }
+
+  openDialog(){
+    console.log("dialog!");
+    this.dialog.open(AddSensorsDataComponent,{
+      height: '430px',
+      width: '500px',
+    });
   }
 }

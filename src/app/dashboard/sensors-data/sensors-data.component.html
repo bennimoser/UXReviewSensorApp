@@ -1,33 +1,10 @@
-<!-- <table>
-    <tr>
-        <th>Sensor</th>
-        <th>Datum</th>
-        <th>Temperatur</th>
-        <th>Luftfeuchtigkeit</th>
-        <th>Standort</th>
-        <th>Position</th>
-      </tr>
-    <tr *ngFor="let item of storeService.sensorenDaten">
-        <td>{{item.sensor.name}}</td>
-        <td>{{item.date | date:'longDate'}}</td>
-        <td>{{item.temperature}}</td>
-        <td>{{item.humidity}}</td>
-        <td>{{item.sensor.location}}</td>
-        <td>{{SensorPosition[item.sensor.position]}}</td>
-        <mat-icon (click)="deleteSensordata(item.id)">delete</mat-icon>
-    </tr>
-</table>
-
-<button [ngClass]="(i + 1) == currentPage ? 'active' : 'inactive'" type="button" class="btn btn-outline-warning pageButton" (click)="selectPage(i)" *ngFor="let page of [].constructor(pages); let i = index">{{i + 1}}</button>
--->
-
 <div class="container" style="background-color: #fcfcfc">
   <div class="row justify-content-center align-items-center">
     <div class="col-xl-7 col-sm-8">
       <h2 class="float-left">Sensoren-Daten</h2>
     </div>
     <div class="col-xl-2 col-sm-2">
-      <app-button class="float-right"></app-button>
+      <app-button (btnClick)="openDialog()"></app-button>
     </div>
   </div>
   <div class="row justify-content-center align-items-center">

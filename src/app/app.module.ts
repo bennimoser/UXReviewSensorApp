@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,6 +16,7 @@ import { MatButtonModule } from '@angular/material/button'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { RowspinnerComponent } from './rowspinner/rowspinner.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -30,13 +32,15 @@ import { RowspinnerComponent } from './rowspinner/rowspinner.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
     MatProgressSpinnerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

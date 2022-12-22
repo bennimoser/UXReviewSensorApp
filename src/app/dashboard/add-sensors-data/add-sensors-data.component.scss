@@ -1,25 +1,23 @@
 
 form {
-    width: 50%;
     background-color: whitesmoke;
     margin: 0 auto;
     padding: 1em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 50px;
 }
 
 form label {
     display: block;
     font-size: 1.2em;
     color: darkslategrey;
-    padding-left: 3px;    
+    padding-left: 3px;
 }
 
 input, select
 {
-    font-size: 1.1em; 
+    font-size: 1.1em;
     color: grey;
     background-color: white;
     padding: 10px;
@@ -32,7 +30,7 @@ input, select
     width: 50%;
 }
 
-input:focus { 
+input:focus {
     border:1px solid orange;
 }
 

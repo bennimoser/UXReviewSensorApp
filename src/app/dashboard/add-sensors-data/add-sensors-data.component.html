@@ -1,8 +1,4 @@
-<form
-  [formGroup]="sensorenDataForm"
-  (ngSubmit)="onSubmit()"
-  *ngIf="showAddTask"
->
+<form [formGroup]="sensorenDataForm" (ngSubmit)="onSubmit()">
   <h2>Neuen Messwert hinzufügen</h2>
   <select formControlName="sensorId">
     <option value="" disabled>Bitte Sensor auswählen</option>
@@ -24,13 +20,22 @@
     formControlName="humidity"
   />
 
-  <button class="btn btn-outline-warning" type="submit">
-    <span
-      *ngIf="isAdding"
-      class="spinner-border spinner-border-sm"
-      role="status"
-      aria-hidden="true"
-    ></span>
-    Erfassen
-  </button>
+  <div class="row justify-content-center align-items-center">
+    <button
+      class="col btn btn-outline-secondary"
+      style="margin-right: 10px"
+      (click)="resetFormAndClose()"
+    >
+      Abbrechen
+    </button>
+    <button class="col btn btn-outline-warning" type="submit">
+      <span
+        *ngIf="isAdding"
+        class="spinner-border spinner-border-sm"
+        role="status"
+        aria-hidden="true"
+      ></span>
+      Erfassen
+    </button>
+  </div>
 </form>
