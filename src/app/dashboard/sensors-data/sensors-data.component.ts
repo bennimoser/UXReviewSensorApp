@@ -49,7 +49,7 @@ export class SensorsDataComponent implements OnInit {
   openDialog(){
     console.log("dialog!");
     this.dialog.open(AddSensorsDataComponent,{
-      height: '430px',
+      height: '500px',
       width: '500px',
     });
   }

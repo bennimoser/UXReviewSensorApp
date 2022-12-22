@@ -17,6 +17,7 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { RowspinnerComponent } from './rowspinner/rowspinner.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { FormInfoComponent } from './dashboard/form-info/form-info.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     SensorsDataComponent,
     AboutPageComponent,
     SpinnerComponent,
-    RowspinnerComponent
+    RowspinnerComponent,
+    FormInfoComponent
   ],
   imports: [
     BrowserModule,
