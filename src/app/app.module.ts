@@ -11,6 +11,7 @@ import { SensorsDataComponent } from './dashboard/sensors-data/sensors-data.comp
 import { AboutPageComponent } from './about-page/about-page.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatIconModule} from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button'
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { SpinnerComponent } from './spinner/spinner.component';
 import { RowspinnerComponent } from './rowspinner/rowspinner.component';
@@ -34,7 +35,8 @@ import { RowspinnerComponent } from './rowspinner/rowspinner.component';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

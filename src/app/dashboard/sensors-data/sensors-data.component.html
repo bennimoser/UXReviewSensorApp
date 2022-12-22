@@ -52,32 +52,36 @@
     <div class="col-xl-1 col-sm-1"></div>
   </div>
   <div
-    class="row justify-content-center align-items-center"
+    class="row justify-content-center align-items-center row-border"
     *ngFor="let item of storeService.sensorenDaten"
   >
     <app-rowspinner
       *ngIf="isdeleting && todeleteItemId == item.id"
     ></app-rowspinner>
     <div class="col-xl-1 col-sm-2">
-      <label>{{ item.sensor.name }}</label>
+      <label class="row-label">{{ item.sensor.name }}</label>
     </div>
     <div class="col-xl-2 col-sm-3">
-      <label>{{ item.date | date : "longDate" }}</label>
+      <label class="row-label">{{ item.date | date : "longDate" }}</label>
     </div>
     <div class="col-xl-1 col-sm-1">
-      <label>{{ item.temperature }} °C</label>
+      <label class="row-label">{{ item.temperature }} °C</label>
     </div>
     <div class="col-xl-1 col-sm-1">
-      <label>{{ item.humidity }} %</label>
+      <label class="row-label">{{ item.humidity }} %</label>
     </div>
     <div class="col-xl-2 col-sm-2">
-      <label>{{ item.sensor.location }}</label>
+      <label class="row-label">{{ item.sensor.location }}</label>
     </div>
     <div class="col-xl-1 col-sm-2">
-      <label>{{ SensorPosition[item.sensor.position] }}</label>
+      <label class="row-label">{{
+        SensorPosition[item.sensor.position]
+      }}</label>
     </div>
     <div class="col-xl-1 col-sm-1">
-      <mat-icon (click)="deleteSensordata(item.id)">delete</mat-icon>
+      <button mat-mini-fab color="warn" (click)="deleteSensordata(item.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
     </div>
   </div>
   <div class="row">
