@@ -1,0 +1,88 @@
+<!-- <table>
+    <tr>
+        <th>Sensor</th>
+        <th>Datum</th>
+        <th>Temperatur</th>
+        <th>Luftfeuchtigkeit</th>
+        <th>Standort</th>
+        <th>Position</th>
+      </tr>
+    <tr *ngFor="let item of storeService.sensorenDaten">
+        <td>{{item.sensor.name}}</td>
+        <td>{{item.date | date:'longDate'}}</td>
+        <td>{{item.temperature}}</td>
+        <td>{{item.humidity}}</td>
+        <td>{{item.sensor.location}}</td>
+        <td>{{SensorPosition[item.sensor.position]}}</td>
+        <mat-icon (click)="deleteSensordata(item.id)">delete</mat-icon>
+    </tr>
+</table>
+
+<button [ngClass]="(i + 1) == currentPage ? 'active' : 'inactive'" type="button" class="btn btn-outline-warning pageButton" (click)="selectPage(i)" *ngFor="let page of [].constructor(pages); let i = index">{{i + 1}}</button>
+-->
+
+<div class="container">
+  <div class="row justify-content-center align-items-center">
+    <div class="col-xl-1 col-sm-2">
+      <label>Sensor</label>
+    </div>
+    <div class="col-xl-2 col-sm-3">
+      <label>Datum</label>
+    </div>
+    <div class="col-xl-1 col-sm-1">
+      <label>Temperatur</label>
+    </div>
+    <div class="col-xl-1 col-sm-1 word-break">
+      <label>Luftfeuchtigkeit</label>
+    </div>
+    <div class="col-xl-2 col-sm-2">
+      <label>Standort</label>
+    </div>
+    <div class="col-xl-1 col-sm-2">
+      <label>Position</label>
+    </div>
+    <div class="col-xl-1 col-sm-1"></div>
+  </div>
+  <div
+    class="row justify-content-center align-items-center"
+    *ngFor="let item of storeService.sensorenDaten"
+  >
+    <app-rowspinner
+      *ngIf="isdeleting && todeleteItemId == item.id"
+    ></app-rowspinner>
+    <div class="col-xl-1 col-sm-2">
+      <label>{{ item.sensor.name }}</label>
+    </div>
+    <div class="col-xl-2 col-sm-3">
+      <label>{{ item.date | date : "longDate" }}</label>
+    </div>
+    <div class="col-xl-1 col-sm-1">
+      <label>{{ item.temperature }} °C</label>
+    </div>
+    <div class="col-xl-1 col-sm-1">
+      <label>{{ item.humidity }} %</label>
+    </div>
+    <div class="col-xl-2 col-sm-2">
+      <label>{{ item.sensor.location }}</label>
+    </div>
+    <div class="col-xl-1 col-sm-2">
+      <label>{{ SensorPosition[item.sensor.position] }}</label>
+    </div>
+    <div class="col-xl-1 col-sm-1">
+      <mat-icon (click)="deleteSensordata(item.id)">delete</mat-icon>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 d-flex justify-content-center">
+      <button
+        [ngClass]="i + 1 == currentPage ? 'active' : 'inactive'"
+        type="button"
+        class="btn btn-outline-warning pageButton"
+        (click)="selectPage(i)"
+        *ngFor="let page of [].constructor(pages); let i = index"
+      >
+        {{ i + 1 }}
+      </button>
+    </div>
+  </div>
+</div>

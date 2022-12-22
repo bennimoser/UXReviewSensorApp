@@ -1,0 +1,23 @@
+.rowoverlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: gray;
+  opacity: 0.5;
+  z-index: 0;
+}
+
+.rowspinner{
+  position:relative;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 40px !important;
+  height: 40px !important;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+
+}
