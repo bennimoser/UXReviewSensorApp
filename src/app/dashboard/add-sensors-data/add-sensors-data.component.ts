@@ -21,7 +21,7 @@ export class AddSensorsDataComponent implements OnInit {
 
   ngOnInit(): void {
     this.sensorenDataForm = this.formBuilder.group({
-      sensorId: [0, [ Validators.required ], ],
+      sensorId: [this.storeService.sensoren[0].id, [ Validators.required ], ],
       temperature: ['', [ Validators.required, Validators.min(-45), Validators.max(50) ] ],
       humidity: ['', [ Validators.required, Validators.min(0), Validators.max(101) ] ],
       date:  [null, [ Validators.required ] ]
@@ -59,8 +59,7 @@ export class AddSensorsDataComponent implements OnInit {
   }
 
   getInvalidClass(controlname:string){
-    console.log(controlname);
-    return this.sensorenDataForm.controls[controlname].invalid ? "invalid" : "";
+    return this.sensorenDataForm.controls[controlname].invalid && this.sensorenDataForm.controls[controlname].touched ? "invalid" : "";
   }
 
 }

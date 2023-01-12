@@ -42,6 +42,11 @@ input[type=submit] {
     border-radius: 0.7em;
 }
 
+select{
+  border: 1px solid orange;
+  border-radius: 0.4em;
+}
+
 input[type=submit]:hover {
     background-color: yellow;
     box-shadow: 2px 2px 2px grey;
