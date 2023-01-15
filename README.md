@@ -1,27 +1,32 @@
-# SensorApp1
+1.	Farbliches Herausheben der Tabelle
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
+Farbliches Herausheben der Tabelle gegenüber der Farbe der restlichen Seite.
 
-## Development server
+2.	Überschrift was zu sehen ist
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Überschrift, welche anzeigt, was gerade in der Tabelle zu sehen ist. 
 
-## Code scaffolding
+3.	Button zum Hinzufügen der Tabelle hinzufügen
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Button für das Hinzufügen eines neuen Eintrags in dieselbe Zeile wie die Überschrift packen.
 
-## Build
+4.	Delete-Icon farblich hervorheben
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Button für das Löschen des Eintrags soll farblich (vorzugsweiße in rot) hervorgehoben werden.
 
-## Running unit tests
+5.	Sensoren Track Überschrift vertikal zentrieren
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Logo im Navbar-Header soll vertikal zentriert werden (zu viel Margin aktuell)
 
-## Running end-to-end tests
+6.	Tabellen Werte hervorheben
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Werte, die in der Tabelle stehen, sollen farblich hervorgehoben werden.
 
-## Further help
+7.	Anzeige von Fehlern, wenn ein Fehler auftritt
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Wenn Fehler auftreten (Verbindung, …), sollen diese auch angezeigt werden (Toast oder Snackbar)
+
+8.	Hilfestellungen und Fehlermeldungen bei der Eingabe
+
+Hilfestellungen und Fehlermeldungen sollen bei der Eingabe von neuen Sensorendaten helfen. 
+
